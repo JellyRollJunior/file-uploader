@@ -40,6 +40,15 @@ passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
+passport.deserializeUser(async (id, done) => {
+    try {
+        const user = db.getUserById(id);
+        done(null, user); // attaches user object to `req.user` 
+    } catch (error) {
+        done(error);
+    }
+})
+
 
 
 // routes
