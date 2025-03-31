@@ -2,6 +2,21 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+const getUserByUsername = async (username) => {
+    try {
+        const user = await prisma.user.findFirst({
+            where: {
+                username: username,
+            }
+        })
+        console.log(user);
+        return user;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 const insertUser = async (username, password) => {
     try {
         await prisma.user.create({
@@ -16,4 +31,4 @@ const insertUser = async (username, password) => {
     }
 }
 
-export { insertUser }
+export { getUserByUsername, insertUser }
