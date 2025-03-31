@@ -36,6 +36,11 @@ const local = new LocalStrategy(async (username, password, done) => {
 });
 passport.use(local);
 
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+
 
 // routes
 app.use('/', indexRouter);
