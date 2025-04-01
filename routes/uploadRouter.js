@@ -1,5 +1,6 @@
 import multer from 'multer';
 import { Router } from 'express';
+import { isAuthenticated } from '../middleware/auth.js';
 import * as uploadController from '../controllers/uploadController.js';
 
 // Max file size: 100kb
@@ -16,8 +17,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage, limits: { fileSize: 100000 } });
 
 const uploadRouter = Router();
-uploadRouter.get('/', uploadController.getUpload);
-uploadRouter.post('/', upload.single('upload'), (req, res) => {
+uploadRouter.get('/', isAuthenticated, uploadController.getUpload);
+uploadRouter.post('/', isAuthenticated, upload.single('upload'), (req, res) => {
     console.log(req.file);
     res.redirect('/upload');
 });
