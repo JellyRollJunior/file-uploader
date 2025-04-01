@@ -6,9 +6,6 @@ import * as uploadController from '../controllers/uploadController.js';
 const uploadRouter = Router();
 
 uploadRouter.get('/', isAuthenticated, uploadController.getUpload);
-uploadRouter.post('/', isAuthenticated, upload.single('upload'), (req, res) => {
-    console.log(req.file);
-    res.redirect('/upload');
-});
+uploadRouter.post('/', isAuthenticated, upload.single('upload'), uploadController.postUpload);
 
 export { uploadRouter };
