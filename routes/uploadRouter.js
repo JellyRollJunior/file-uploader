@@ -2,7 +2,7 @@ import { Router } from 'express';
 import * as uploadController from '../controllers/uploadController.js';
 
 import multer from 'multer';
-const upload = multer();
+const upload = multer({ dest: './uploads/' });
 
 const uploadRouter = Router();
 uploadRouter.get('/', uploadController.getUpload);
