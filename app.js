@@ -5,9 +5,10 @@ import session from 'express-session';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 import { PrismaClient } from '@prisma/client';
 import { passport } from './config/passport.js';
+import { userToLocals } from './middleware/userToLocals.js';
 import { indexRouter } from './routes/indexRouter.js';
 import { loginRouter } from './routes/loginRouter.js';
-import { userToLocals } from './middleware/userToLocals.js';
+import { uploadRouter } from './routes/uploadRouter.js';
 dotenv.config();
 
 // setup app
@@ -39,6 +40,7 @@ app.use(userToLocals);
 // routes
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
+app.use('/upload', uploadRouter);
 
 // init server
 const PORT = 3000;

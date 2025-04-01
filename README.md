@@ -12,5 +12,8 @@
 
 
 # todo:
+- multer middleware
 
-- error handler middleware
+- later
+    - error handler middleware
+    - authenticated middleware
