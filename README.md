@@ -13,7 +13,6 @@
 
 # todo:
 - multer middleware
-    - upload file name
     - error handling
 
 
