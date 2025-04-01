@@ -18,4 +18,3 @@
 
 - later
     - error handler middleware
-    - authenticated middleware
