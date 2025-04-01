@@ -13,5 +13,4 @@
 
 # todo:
 
-- error handling on db queries
 - error handler middleware
