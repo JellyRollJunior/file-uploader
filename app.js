@@ -2,10 +2,12 @@ import express from 'express';
 import path from 'node:path';
 import dotenv from 'dotenv';
 import session from 'express-session';
+import { PrismaSessionStore } from '@quixo3/prisma-session-store';
+import { PrismaClient } from '@prisma/client';
 import { passport } from './config/passport.js';
 import { indexRouter } from './routes/indexRouter.js';
 import { loginRouter } from './routes/loginRouter.js';
-import { userToLocals } from './middleware/userToLocals.js'
+import { userToLocals } from './middleware/userToLocals.js';
 dotenv.config();
 
 // setup app
@@ -15,12 +17,24 @@ const __dirname = path.resolve();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // enable POST request data
-app.use(express.urlencoded({ extended: false })); 
-// enable sessions
-app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: false }));
+app.use(express.urlencoded({ extended: false }));
+// enable sessions (stored in Prisma DB)
+app.use(
+    session({
+        store: new PrismaSessionStore(new PrismaClient(), {
+            checkPeriod: 2 * 60 * 1000, //ms
+            dbRecordIdIsSessionId: true,
+            dbRecordIdFunction: undefined,
+        }),
+        resave: false,
+        saveUninitialized: false,
+        secret: process.env.SECRET,
+        cookie: { maxAge: 60 * 60 * 1000 }, // 60 minutes
+    })
+);
 // Passport authentication
 app.use(passport.session());
-app.use(userToLocals)
+app.use(userToLocals);
 
 // routes
 app.use('/', indexRouter);
