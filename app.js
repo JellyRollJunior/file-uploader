@@ -5,6 +5,7 @@ import session from 'express-session';
 import { passport } from './config/passport.js';
 import { indexRouter } from './routes/indexRouter.js';
 import { loginRouter } from './routes/loginRouter.js';
+import { userToLocals } from './middleware/userToLocals.js'
 dotenv.config();
 
 // setup app
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: false }));
 // Passport authentication
 app.use(passport.session());
+app.use(userToLocals)
 
 // routes
 app.use('/', indexRouter);
