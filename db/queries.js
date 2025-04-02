@@ -36,19 +36,47 @@ const getFolderById = databaseHandler(async (id) => {
     const folder = await prisma.folder.findFirst({
         where: {
             id: id,
-        }
-    })
+        },
+    });
     console.log(folder);
-    return folder
+    return folder;
 }, 'Error retrieving folder');
 
 const insertFolder = databaseHandler(async (folderName = 'Untitled folder') => {
-    const newFolder = await prisma.folder.create({
+    const folder = await prisma.folder.create({
         data: {
             name: folderName,
-        }
-    })
-    console.log(newFolder);
+        },
+    });
+    console.log(folder);
 }, 'Error creating folder');
 
-export { getUserById, getUserByUsername, insertUser };
+const updateFolder = databaseHandler(async (id, folderName) => {
+    const folder = await prisma.folder.update({
+        where: {
+            id: id,
+        },
+        data: {
+            name: folderName,
+        },
+    });
+    console.log(folder);
+});
+
+const deleteFolder = databaseHandler(async (id) => {
+    await prisma.folder.delete({
+        where: {
+            id: id,
+        },
+    });
+}, 'Error deleting folder');
+
+export {
+    getUserById,
+    getUserByUsername,
+    insertUser,
+    getFolderById,
+    insertFolder,
+    updateFolder,
+    deleteFolder,
+};
