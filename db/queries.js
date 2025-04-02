@@ -42,7 +42,7 @@ const getFolderById = databaseHandler(async (id) => {
     return folder;
 }, 'Error retrieving folder');
 
-const getChildFolders = databaseHandler(async (parentId) => {
+const getFoldersByParent = databaseHandler(async (parentId) => {
     const folders = await prisma.folder.findMany({
         where: {
             parentId,
@@ -75,7 +75,7 @@ const updateFolder = databaseHandler(async (id, name) => {
         },
     });
     console.log(folder);
-});
+}, 'Error updating folder');
 
 const deleteFolder = databaseHandler(async (id) => {
     await prisma.folder.delete({
@@ -84,6 +84,26 @@ const deleteFolder = databaseHandler(async (id) => {
         },
     });
 }, 'Error deleting folder');
+
+const getFileById = databaseHandler(async (id) => {
+    const file = await prisma.file.findFirst({
+        where: {
+            id,
+        },
+    });
+    console.log(file);
+    return file;
+}, 'Error retrieving file');
+
+const getFilesByFolder = databaseHandler(async (folderId) => {
+    const files = await prisma.file.findMany({
+        where: {
+            folderId,
+        },
+    });
+    console.log(files);
+    return files;
+}, 'Error retrieving files');
 
 const insertFile = databaseHandler(async (name, path, folderId = null) => {
     const folder = await prisma.file.create({
@@ -101,9 +121,11 @@ export {
     getUserByUsername,
     insertUser,
     getFolderById,
-    getChildFolders,
+    getFoldersByParent,
     insertFolder,
     updateFolder,
     deleteFolder,
+    getFileById,
+    getFilesByFolder,
     insertFile,
 };
