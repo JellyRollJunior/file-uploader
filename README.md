@@ -23,3 +23,14 @@
     - children
     - name
     - files (id) []
+
+- create folder
+    - query
+    - button
+
+- if no parent -> root directory in library
+- create file
+
+
+# later:
+- library page to display folders and files
