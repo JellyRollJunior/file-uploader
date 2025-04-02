@@ -12,9 +12,3 @@
 
 
 # todo:
-- multer middleware
-    - error handling
-
-
-- later
-    - error handler middleware

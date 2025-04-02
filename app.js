@@ -42,6 +42,14 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/upload', uploadRouter);
 
+// error handlers
+app.use('*', (req, res, next) => {
+    res.render('error', { error: '404 Page not found' });
+});
+app.use((error, req, res, next) => {
+    res.render('error', { error });
+});
+
 // init server
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
