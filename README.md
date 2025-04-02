@@ -12,18 +12,16 @@
 
 
 # todo:
-- Folders
-    - add basic CRUD queries for folders
-    - Add children structure to folders
-        - update, delete
-
-- create folder
+- create files
     - query
-    - button
+        - read
+        - update
+        - delete
+    - add parent folder structure
+        - mayhaps move declaration to folder model (?)
 
 - if no parent -> root directory in library
 - if file no folder -> root directory
-- create file
 
 
 # later:
