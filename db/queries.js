@@ -42,22 +42,33 @@ const getFolderById = databaseHandler(async (id) => {
     return folder;
 }, 'Error retrieving folder');
 
-const insertFolder = databaseHandler(async (folderName = 'Untitled folder') => {
+const getChildFolders = databaseHandler(async (parentId) => {
+    const folders = await prisma.folder.findMany({
+        where: {
+            parentId,
+        }
+    })
+    console.log(folders);
+    return folders;
+}, 'Error retrieving child folders')
+
+const insertFolder = databaseHandler(async (name = 'Untitled folder', parentId = null) => {
     const folder = await prisma.folder.create({
         data: {
-            name: folderName,
+            name,
+            parentId,
         },
     });
     console.log(folder);
 }, 'Error creating folder');
 
-const updateFolder = databaseHandler(async (id, folderName) => {
+const updateFolder = databaseHandler(async (id, name) => {
     const folder = await prisma.folder.update({
         where: {
             id: id,
         },
         data: {
-            name: folderName,
+            name,
         },
     });
     console.log(folder);
@@ -76,6 +87,7 @@ export {
     getUserByUsername,
     insertUser,
     getFolderById,
+    getChildFolders,
     insertFolder,
     updateFolder,
     deleteFolder,

@@ -15,9 +15,11 @@
 - Folders
     - add basic CRUD queries for folders
     - Add parent structure to folders
-        - create, read, update, delete
+        - update, 
+        - delete
+
     - Add children structure to folders
-        - create, read, update, delete
+        - update, delete
 
 - create folder
     - query
