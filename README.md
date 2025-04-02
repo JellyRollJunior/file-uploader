@@ -14,10 +14,6 @@
 # todo:
 - Folders
     - add basic CRUD queries for folders
-    - Add parent structure to folders
-        - update, 
-        - delete
-
     - Add children structure to folders
         - update, delete
 

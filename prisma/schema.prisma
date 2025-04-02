@@ -39,7 +39,7 @@ model Folder {
   id       Int      @id @default(autoincrement())
   name     String
   parentId Int?
-  parent   Folder?  @relation("ParentId", fields: [parentId], references: [id])
+  parent   Folder?  @relation("ParentId", fields: [parentId], references: [id], onDelete: Cascade)
   children Folder[] @relation("ParentId")
   files    File[]
 }
