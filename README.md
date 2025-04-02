@@ -29,6 +29,7 @@
     - button
 
 - if no parent -> root directory in library
+- if file no folder -> root directory
 - create file
 
 
