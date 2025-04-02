@@ -12,3 +12,14 @@
 
 
 # todo:
+- Add file model to DB
+    - id
+    - file name
+    - file path
+    - folder(id)
+- Add folder model to DB
+    - id
+    - parent (optional: none == root)
+    - children
+    - name
+    - files (id) []
