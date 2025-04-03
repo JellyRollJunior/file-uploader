@@ -7,5 +7,17 @@
   </head>
   <body>
     <h1>Hello world!</h1>
+    <ul>
+      <% if (locals.folders) { %>
+        <% locals.folders.forEach((folder) => { %>
+          <li>folder: <%= folder.name %></li>
+        <% }) %>
+      <% } %>
+      <% if (locals.files) { %>
+        <% locals.files.forEach((file) => { %>
+          <li>file: <%= file.displayName %></li>
+        <% }) %>
+      <% } %>
+    </ul>
   </body>
 </html>

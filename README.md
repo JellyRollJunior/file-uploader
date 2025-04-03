@@ -14,10 +14,7 @@
 # todo:
 
 - create page to display folder data
-    - static
-    - show data from prisma
-    - render folder based on route
-
+- Drill down on folder
 
 
 - if no parent -> root directory in library
@@ -27,3 +24,4 @@
 # later:
 - library page to display folders and files
 - join get folder and files query into one query
+- add file size field in model
