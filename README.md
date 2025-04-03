@@ -14,7 +14,6 @@
 # todo:
 - create files
     - query
-        - read
         - update
         - delete
     - add parent folder structure
