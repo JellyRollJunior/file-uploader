@@ -8,6 +8,7 @@ const postUpload = async (req, res, next) => {
             req.file.filename,
             req.file.originalname,
             req.file.path,
+            Number(req.file.size),
             Number(folderId),
         );
     } catch (error) {

@@ -15,7 +15,7 @@
       <% } %>
       <% if (locals.files) { %>
         <% locals.files.forEach((file) => { %>
-          <li>file: <%= file.displayName %></li>
+          <li>file: <%= file.displayName %> - <%= file.size %> bytes</li>
         <% }) %>
       <% } %>
     </ul>
