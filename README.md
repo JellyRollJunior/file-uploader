@@ -21,7 +21,7 @@
     - handle upload/folderId
 
 - remove upload button from index
-
+- add parent return button
 
 # later:
 - library page to display folders and files
@@ -29,3 +29,4 @@
 - add file size field in model
 - user validatrion
 - folder validation
+- file validation
