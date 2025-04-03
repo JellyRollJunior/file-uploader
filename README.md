@@ -12,10 +12,12 @@
 
 
 # todo:
+- add file size field in model
 
 # later:
 - join get folder and files query into one query
-- add file size field in model
+- make file input required
+
 - user validatrion
 - folder validation
 - file validation

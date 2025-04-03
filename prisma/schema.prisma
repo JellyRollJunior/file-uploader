@@ -32,6 +32,7 @@ model File {
   name        String  @unique
   displayName String
   path        String
+  size        Int     @default(0)
   Folder      Folder? @relation(fields: [folderId], references: [id], onDelete: Cascade)
   folderId    Int?
 }
