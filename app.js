@@ -8,6 +8,7 @@ import { passport } from './config/passport.js';
 import { userToLocals } from './middleware/userToLocals.js';
 import { indexRouter } from './routes/indexRouter.js';
 import { loginRouter } from './routes/loginRouter.js';
+import { signupRouter } from './routes/signupRouter.js';
 import { uploadRouter } from './routes/uploadRouter.js';
 import { folderRouter } from './routes/folderRouter.js';
 dotenv.config();
@@ -41,6 +42,7 @@ app.use(userToLocals);
 // routes
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 app.use('/upload', uploadRouter);
 app.use('/folder', folderRouter);
 

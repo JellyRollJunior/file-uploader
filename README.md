@@ -15,10 +15,10 @@
 
 - create page to display folder data
 
-
-- if no parent -> root directory in library
-- if file no folder -> root directory
-
+- user signup page
+    - serve page
+    - make page
+    - db 
 
 # later:
 - library page to display folders and files
