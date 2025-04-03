@@ -3,6 +3,6 @@ import * as folderController from '../controllers/folderController.js';
 
 const folderRouter = Router();
 
-folderRouter.get('/', folderController.getFolder);
+folderRouter.get('/:folderId', folderController.getFolder);
 
 export { folderRouter };

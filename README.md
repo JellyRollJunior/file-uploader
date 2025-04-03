@@ -14,7 +14,6 @@
 # todo:
 
 - create page to display folder data
-    - serve page
     - static
     - show data from prisma
     - render folder based on route
@@ -27,3 +26,4 @@
 
 # later:
 - library page to display folders and files
+- join get folder and files query into one query
