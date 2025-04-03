@@ -5,7 +5,6 @@ import * as uploadController from '../controllers/uploadController.js';
 
 const uploadRouter = Router();
 
-uploadRouter.get('/', isAuthenticated, uploadController.getUpload);
 uploadRouter.post('/:folderId', isAuthenticated, upload.single('upload'), uploadController.postUpload);
 
 export { uploadRouter };

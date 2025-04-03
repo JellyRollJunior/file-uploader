@@ -1,9 +1,5 @@
 import * as db from '../db/queries.js';
 
-const getUpload = (req, res) => {
-    res.render('upload');
-};
-
 const postUpload = async (req, res, next) => {
     const folderId = req.params.folderId;
     console.log(req.file);
@@ -20,4 +16,4 @@ const postUpload = async (req, res, next) => {
     res.redirect(`/folder/${folderId}`);
 };
 
-export { getUpload, postUpload };
+export { postUpload };
