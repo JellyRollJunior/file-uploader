@@ -12,12 +12,6 @@
 
 
 # todo:
-- create files
-    - query
-        - delete
-    - add parent folder structure
-        - mayhaps move declaration to folder model (?)
-
 - if no parent -> root directory in library
 - if file no folder -> root directory
 

@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 const getUserById = databaseHandler(async (id) => {
     const user = await prisma.user.findFirst({
         where: {
-            id: id,
+            id,
         },
     });
     console.log(user);
@@ -16,7 +16,7 @@ const getUserById = databaseHandler(async (id) => {
 const getUserByUsername = databaseHandler(async (username) => {
     const user = await prisma.user.findFirst({
         where: {
-            username: username,
+            username,
         },
     });
     console.log(user);
@@ -35,7 +35,7 @@ const insertUser = databaseHandler(async (username, password) => {
 const getFolderById = databaseHandler(async (id) => {
     const folder = await prisma.folder.findFirst({
         where: {
-            id: id,
+            id,
         },
     });
     console.log(folder);
@@ -68,7 +68,7 @@ const insertFolder = databaseHandler(
 const updateFolder = databaseHandler(async (id, name) => {
     const folder = await prisma.folder.update({
         where: {
-            id: id,
+            id,
         },
         data: {
             name,
@@ -80,7 +80,7 @@ const updateFolder = databaseHandler(async (id, name) => {
 const deleteFolder = databaseHandler(async (id) => {
     await prisma.folder.delete({
         where: {
-            id: id,
+            id,
         },
     });
 }, 'Error deleting folder');
@@ -132,6 +132,14 @@ const updateFile = databaseHandler(async (id, displayName) => {
     console.log(file);
 }, 'Error updating file');
 
+const deleteFile = databaseHandler(async (id) => {
+    await prisma.file.delete({
+        where: {
+            id,
+        },
+    });
+});
+
 export {
     getUserById,
     getUserByUsername,
@@ -145,4 +153,5 @@ export {
     getFilesByFolder,
     insertFile,
     updateFile,
+    deleteFile,
 };
