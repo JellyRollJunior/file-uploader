@@ -17,7 +17,8 @@
 - make click upload button show modal for upload
 - create file record on upload
 - upload to current folder on upload
-- 
+    - post to upload/folderId
+    - handle upload/folderId
 
 - remove upload button from index
 

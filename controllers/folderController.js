@@ -13,7 +13,7 @@ const getFolder = async (req, res) => {
             : await db.getFilesByFolder(Number(folderId));
     console.log(folders);
     console.log(files);
-    res.render('folder', {folders, files});
+    res.render('folder', {folderId, folders, files});
 };
 
 export { getFolder };

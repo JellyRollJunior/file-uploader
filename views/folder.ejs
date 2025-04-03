@@ -19,10 +19,12 @@
         <% }) %>
       <% } %>
     </ul>
-    <form action="/upload" method="POST" enctype="multipart/form-data" class="hidden">
-      <label for="upload">Upload File</label>
-      <input type="file" name="upload" id="upload">
-      <button>Submit</button>
-    </form>
+    <% if (locals.folderId) { %>
+      <form action="/upload/<%= locals.folderId %>" method="POST" enctype="multipart/form-data" class="hidden">
+        <label for="upload">Upload File</label>
+        <input type="file" name="upload" id="upload">
+        <button>Submit</button>
+      </form>
+    <% } %>
   </body>
 </html>
