@@ -14,7 +14,6 @@
 # todo:
 
 - create page to display folder data
-- Drill down on folder
 
 
 - if no parent -> root directory in library

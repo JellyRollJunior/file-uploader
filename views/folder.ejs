@@ -10,7 +10,7 @@
     <ul>
       <% if (locals.folders) { %>
         <% locals.folders.forEach((folder) => { %>
-          <li>folder: <%= folder.name %></li>
+          <li>folder: <a href="/folder/<%= folder.id %>"><%= folder.name %></a></li>
         <% }) %>
       <% } %>
       <% if (locals.files) { %>
