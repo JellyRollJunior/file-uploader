@@ -9,6 +9,7 @@ import { userToLocals } from './middleware/userToLocals.js';
 import { indexRouter } from './routes/indexRouter.js';
 import { loginRouter } from './routes/loginRouter.js';
 import { uploadRouter } from './routes/uploadRouter.js';
+import { folderRouter } from './routes/folderRouter.js';
 dotenv.config();
 
 // setup app
@@ -41,6 +42,7 @@ app.use(userToLocals);
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/upload', uploadRouter);
+app.use('/folder', folderRouter);
 
 // error handlers
 app.use('*', (req, res, next) => {

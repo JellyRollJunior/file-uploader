@@ -12,6 +12,15 @@
 
 
 # todo:
+
+- create page to display folder data
+    - serve page
+    - static
+    - show data from prisma
+    - render folder based on route
+
+
+
 - if no parent -> root directory in library
 - if file no folder -> root directory
 
