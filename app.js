@@ -19,6 +19,9 @@ const app = express();
 const __dirname = path.resolve();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// serve assets from public folder
+const assetsPath = path.join(__dirname, 'public');
+app.use(express.static(assetsPath));
 // enable POST request data
 app.use(express.urlencoded({ extended: false }));
 // enable sessions (stored in Prisma DB)

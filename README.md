@@ -13,6 +13,15 @@
 
 # todo:
 
+- add uplaod button
+- make click upload button show modal for upload
+- create file record on upload
+- upload to current folder on upload
+- 
+
+- remove upload button from index
+
+
 # later:
 - library page to display folders and files
 - join get folder and files query into one query
