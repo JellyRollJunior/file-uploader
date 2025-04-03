@@ -12,14 +12,6 @@
 
 
 # todo:
-
-- add uplaod button
-- make click upload button show modal for upload
-- create file record on upload
-- upload to current folder on upload
-    - post to upload/folderId
-    - handle upload/folderId
-
 - remove upload button from index
 - add parent return button
 
@@ -30,3 +22,5 @@
 - user validatrion
 - folder validation
 - file validation
+- add uplaod button
+- make click upload button show modal for upload
