@@ -138,7 +138,7 @@ const deleteFile = databaseHandler(async (id) => {
             id,
         },
     });
-});
+}, 'Error deleting file');
 
 export {
     getUserById,
