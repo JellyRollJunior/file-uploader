@@ -13,14 +13,9 @@
 
 # todo:
 
-- create page to display folder data
-
-- user signup page
-    - serve page
-    - make page
-    - db 
-
 # later:
 - library page to display folders and files
 - join get folder and files query into one query
 - add file size field in model
+- user validatrion
+- folder validation
