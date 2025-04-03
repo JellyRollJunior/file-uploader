@@ -14,7 +14,6 @@
 # todo:
 - create files
     - query
-        - update
         - delete
     - add parent folder structure
         - mayhaps move declaration to folder model (?)

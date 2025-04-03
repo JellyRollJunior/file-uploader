@@ -105,17 +105,32 @@ const getFilesByFolder = databaseHandler(async (folderId) => {
     return files;
 }, 'Error retrieving files');
 
-const insertFile = databaseHandler(async (name, displayName, path, folderId = null) => {
-    const folder = await prisma.file.create({
+const insertFile = databaseHandler(
+    async (name, displayName, path, folderId = null) => {
+        const file = await prisma.file.create({
+            data: {
+                name,
+                displayName,
+                path,
+                folderId,
+            },
+        });
+        console.log(file);
+    },
+    'Error creating file'
+);
+
+const updateFile = databaseHandler(async (id, displayName) => {
+    const file = await prisma.file.update({
+        where: {
+            id,
+        },
         data: {
-            name,
             displayName,
-            path,
-            folderId,
         },
     });
-    console.log(folder);
-}, 'Error creating file');
+    console.log(file);
+}, 'Error updating file');
 
 export {
     getUserById,
@@ -129,4 +144,5 @@ export {
     getFileById,
     getFilesByFolder,
     insertFile,
+    updateFile,
 };
