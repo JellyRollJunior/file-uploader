@@ -11,6 +11,7 @@ import { loginRouter } from './routes/loginRouter.js';
 import { signupRouter } from './routes/signupRouter.js';
 import { uploadRouter } from './routes/uploadRouter.js';
 import { folderRouter } from './routes/folderRouter.js';
+import { fileRouter } from './routes/fileRouter.js';
 dotenv.config();
 
 // setup app
@@ -48,6 +49,7 @@ app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/upload', uploadRouter);
 app.use('/folder', folderRouter);
+app.use('/file', fileRouter)
 
 // error handlers
 app.use('*', (req, res, next) => {
