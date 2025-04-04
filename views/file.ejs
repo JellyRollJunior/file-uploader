@@ -11,9 +11,7 @@
       <div><%= locals.file.displayName %></div>
       <div><%= locals.file.size %> Bytes</div>
       <div><%= locals.file.uploadTime %></div>
-      <form action="/file/<%= file.id %>/download" method="Post">
-        <button>download</button>
-      </form>
+      <a href="/file/<%= file.id %>/download"><button>download</button></a>
     <% } %>
   </body>
 </html>
