@@ -12,11 +12,10 @@
 
 
 # todo:
-
-# later:
 - join get folder and files query into one query
 - make file input required
-- download button
+
+# later:
 - download functionality
 - upload to cloud
 
