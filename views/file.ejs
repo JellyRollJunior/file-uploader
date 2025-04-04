@@ -7,5 +7,10 @@
   </head>
   <body>
     <h1>Its file time!</h1>
+    <% if (locals.file) { %>
+      <div><%= locals.file.displayName %></div>
+      <div><%= locals.file.size %> Bytes</div>
+      <div><%= locals.file.uploadTime %></div>
+    <% } %>
   </body>
 </html>
