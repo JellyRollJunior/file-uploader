@@ -15,7 +15,7 @@
       <% } %>
       <% if (locals.files) { %>
         <% locals.files.forEach((file) => { %>
-          <li>file: <%= file.displayName %> - <%= file.size %> bytes - <%= file.uploadTime %></li>
+          <li>file: <a href="/file/<%= file.id %>"><%= file.displayName %></a></li>
         <% }) %>
       <% } %>
     </ul>

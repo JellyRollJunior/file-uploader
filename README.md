@@ -12,10 +12,6 @@
 
 
 # todo:
-- view file page
-    - serve
-    - show file data
-    - 
 
 # later:
 - join get folder and files query into one query
@@ -23,6 +19,7 @@
 - download button
 - download functionality
 - upload to cloud
+- link to folder on index
 
 - user validatrion
 - folder validation
