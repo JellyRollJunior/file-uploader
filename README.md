@@ -19,7 +19,6 @@
 - download button
 - download functionality
 - upload to cloud
-- link to folder on index
 
 - user validatrion
 - folder validation
