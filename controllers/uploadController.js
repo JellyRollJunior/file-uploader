@@ -5,7 +5,7 @@ const postUpload = async (req, res, next) => {
     try {
         console.log(req.file);
         const folderId = req.params.folderId;
-        const fullpath = await supabase.uploadFileToSupabase(req.file);
+        const fullpath = await supabase.uploadFile(req.file);
         await db.insertFile(
             req.file.originalname,
             fullpath,

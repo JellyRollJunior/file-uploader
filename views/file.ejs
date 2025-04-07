@@ -11,7 +11,7 @@
       <div><%= locals.file.name %></div>
       <div><%= locals.file.size %> Bytes</div>
       <div><%= locals.file.uploadTime %></div>
-      <a href="/file/<%= file.id %>/download"><button>download</button></a>
+      <a href="<%= locals.url %>" download>Download me!!!!</a>
     <% } %>
   </body>
 </html>
