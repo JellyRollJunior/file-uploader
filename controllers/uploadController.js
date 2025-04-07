@@ -8,11 +8,11 @@ const postUpload = async (req, res, next) => {
         const folderId = req.params.folderId;
         const uuid = uuidv4();
         const extension = req.file.originalname.split('.').pop();
-        supabase.uploadFileToSupabase(uuid, extension, req.file.buffer);
+        const fullpath = await supabase.uploadFileToSupabase(uuid, extension, req.file.buffer);
         await db.insertFile(
             uuid,
             req.file.originalname,
-            uuid,   // placeholder for URL returned from supabase
+            fullpath,
             Number(req.file.size),
             Number(folderId)
         );

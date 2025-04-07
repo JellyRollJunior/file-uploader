@@ -16,10 +16,11 @@ const uploadFileToSupabase = async (uuid, extension, buffer) => {
             cacheControl: 3600,
             upsert: false
         });
-    console.log(data);
     if (error) {
         throw error;
     }
+    console.log(data);
+    return data.fullPath;
 }
 
 export { uploadFileToSupabase }
