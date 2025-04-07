@@ -17,7 +17,9 @@ const uploadFileToSupabase = async (uuid, extension, buffer) => {
             upsert: false
         });
     console.log(data);
-    console.log(error);
+    if (error) {
+        throw error;
+    }
 }
 
 export { uploadFileToSupabase }
