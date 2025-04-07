@@ -17,15 +17,9 @@
     - upload file to storage
 
 - config supabase
-    - add uuid for file
-    - modify db schema for new files
-        - name
-        - uuid
-        - url
-        - remove displayname
-        - remove path
     - modify insert query for new schema
 
+- display different data on folder.ejs / file.ejs
 - upload to cloud
     - upload to supabase on file upload
     - save supabase file url on upload

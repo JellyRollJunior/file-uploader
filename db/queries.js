@@ -106,13 +106,13 @@ const getFilesByFolder = databaseHandler(async (folderId) => {
 }, 'Error retrieving files');
 
 const insertFile = databaseHandler(
-    async (name, displayName, path, size, folderId = null) => {
+    async (uuid, name, url, size, folderId = null) => {
         let sanitizedFolderId = folderId == 0 ? null : folderId;
         const file = await prisma.file.create({
             data: {
+                uuid,
                 name,
-                displayName,
-                path,
+                url,
                 size,
                 folderId: sanitizedFolderId,
             },
