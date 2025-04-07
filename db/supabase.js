@@ -7,13 +7,12 @@ const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const uploadSupabase = async (file) => {
-    console.log(supabase);
-    const fileBase64 = decode(file.buffer.toString("base64"));
+const uploadFileToSupabase = async (uuid, extension, buffer) => {
+    const fileBase64 = decode(buffer.toString("base64"));
     const {data, error} = await supabase
         .storage
         .from('files')
-        .upload('/' + file.originalname, fileBase64, {
+        .upload(`/${uuid}.${extension}`, fileBase64, {
             cacheControl: 3600,
             upsert: false
         });
@@ -21,4 +20,4 @@ const uploadSupabase = async (file) => {
     console.log(error);
 }
 
-export { uploadSupabase }
+export { uploadFileToSupabase }

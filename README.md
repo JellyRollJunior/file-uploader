@@ -12,14 +12,9 @@
 
 
 # todo:
-- config supabase
-    - get supbase client
-    - upload file to storage
-
-- upload to cloud
-    - upload to supabase on file upload
+- serve file with supabase url on download
     - save supabase file url on upload
-    - serve file with supabase url on download
+    - access file
 
 # later:
 - create folder button
