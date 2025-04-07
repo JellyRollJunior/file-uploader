@@ -14,7 +14,8 @@
 # todo:
 - serve file with supabase url on download
     - save supabase file url on upload
-    - access file
+    - remove uuid from schema
+    - serve file on download
 
 # later:
 - create folder button

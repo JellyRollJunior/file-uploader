@@ -1,14 +1,17 @@
 import dotenv from 'dotenv';
 import { decode } from 'base64-arraybuffer';
 import { createClient } from '@supabase/supabase-js'
+import { v4 as uuidv4 } from 'uuid';
 dotenv.config();
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const uploadFileToSupabase = async (uuid, extension, buffer) => {
-    const fileBase64 = decode(buffer.toString("base64"));
+const uploadFileToSupabase = async (file) => {
+    const uuid = uuidv4();
+    const extension = file.originalname.split('.').pop();
+    const fileBase64 = decode(file.buffer.toString("base64"));
     const {data, error} = await supabase
         .storage
         .from('files')
