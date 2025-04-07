@@ -122,13 +122,13 @@ const insertFile = databaseHandler(
     'Error inserting file'
 );
 
-const updateFile = databaseHandler(async (id, displayName) => {
+const updateFile = databaseHandler(async (id, name) => {
     const file = await prisma.file.update({
         where: {
             id,
         },
         data: {
-            displayName,
+            name,
         },
     });
     console.log(file);
