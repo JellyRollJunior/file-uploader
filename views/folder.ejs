@@ -22,7 +22,7 @@
     <% if (locals.folderId) { %>
       <form action="/upload/<%= locals.folderId %>" method="POST" enctype="multipart/form-data" class="hidden">
         <label for="upload">Upload File</label>
-        <input type="file" name="upload" id="upload">
+        <input type="file" name="upload" id="upload" required>
         <button>Submit</button>
       </form>
     <% } %>

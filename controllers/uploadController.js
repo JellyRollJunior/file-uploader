@@ -1,13 +1,13 @@
 import * as db from '../db/queries.js';
 
 const postUpload = async (req, res, next) => {
-    const folderId = req.params.folderId;
+    const folderId = req.params.folderId;    
     console.log(req.file);
     try {
-        db.insertFile(
-            req.file.filename,
+        await db.insertFile(
             req.file.originalname,
-            req.file.path,
+            req.file.originalname,
+            'test',
             Number(req.file.size),
             Number(folderId),
         );
