@@ -28,14 +28,14 @@ model User {
 }
 
 model File {
-  id          Int      @id @default(autoincrement())
-  name        String   @unique
-  displayName String
-  path        String
-  size        Int      @default(0)
-  uploadTime  DateTime @default(now())
-  Folder      Folder?  @relation(fields: [folderId], references: [id], onDelete: Cascade)
-  folderId    Int?
+  id         Int      @id @default(autoincrement())
+  uuid       String   @unique
+  name       String
+  url        String   @unique
+  size       Int      @default(0)
+  uploadTime DateTime @default(now())
+  Folder     Folder?  @relation(fields: [folderId], references: [id], onDelete: Cascade)
+  folderId   Int?
 }
 
 model Folder {

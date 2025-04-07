@@ -17,7 +17,6 @@
     - upload file to storage
 
 - config supabase
-    - remove saving file to local storage
     - add uuid for file
     - modify db schema for new files
         - name
