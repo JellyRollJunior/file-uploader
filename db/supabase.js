@@ -36,4 +36,15 @@ const getFileDownloadUrl = (path) => {
     return data.publicUrl;
 };
 
-export { uploadFile, getFileDownloadUrl };
+const getSrcUrl = (path) => {
+    const { data, error } = supabase.storage
+        .from('files')
+        .getPublicUrl(path);
+    if (error) {
+        throw error;
+    }
+    console.log(data);
+    return data.publicUrl;
+};
+
+export { uploadFile, getFileDownloadUrl, getSrcUrl };
