@@ -6,7 +6,9 @@
     <title>Folder</title>
   </head>
   <body>
-    <h1>Hello world!</h1>
+    <% if (locals.folderName) { %>
+      <h1><%= locals.folderName %></h1>
+    <% } %>
     <ul>
       <% if (locals.folders) { %>
         <% locals.folders.forEach((folder) => { %>
