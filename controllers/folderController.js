@@ -26,9 +26,9 @@ const getFolder = async (req, res, next) => {
 const postFolder = async (req, res, next) => {
     try {
         const { folderId } = req.params;
-        const parentFolderId = folderId == 0 ? null : folderId;
+        const parentFolderId = folderId == 0 ? null : Number(folderId);
         const folderName = req.body.folderName;
-        await db.insertFolder(folderName, Number(parentFolderId));
+        await db.insertFolder(folderName, parentFolderId);
         res.redirect(`/folder/${folderId}`);
     } catch (error) {
         next(error);

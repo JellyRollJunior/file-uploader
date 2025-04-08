@@ -9,7 +9,6 @@ const getUserById = databaseHandler(async (id) => {
             id,
         },
     });
-    console.log(user);
     return user;
 }, 'Error retrieving user');
 
@@ -19,7 +18,6 @@ const getUserByUsername = databaseHandler(async (username) => {
             username,
         },
     });
-    console.log(user);
     return user;
 }, 'Error retrieving user');
 
