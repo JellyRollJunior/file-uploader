@@ -12,13 +12,11 @@
 
 
 # todo:
-- signup button
+- create folder button
+- upload file modal
 
 # later:
 - styling
-- create folder button
 - user validatrion
 - folder validation
 - file validation
-
-- upload file modal

@@ -9,19 +9,26 @@
     <% if (locals.folderName) { %>
       <h1><%= locals.folderName %></h1>
     <% } %>
-    <ul>
-      <% if (locals.folders) { %>
-        <% locals.folders.forEach((folder) => { %>
-          <li>folder: <a href="/folder/<%= folder.id %>"><%= folder.name %></a></li>
-        <% }) %>
-      <% } %>
-      <% if (locals.files) { %>
-        <% locals.files.forEach((file) => { %>
-          <li>file: <a href="/file/<%= file.id %>"><%= file.name %></a></li>
-        <% }) %>
-      <% } %>
-    </ul>
+    <main>
+      <ul>
+        <% if (locals.folders) { %>
+          <% locals.folders.forEach((folder) => { %>
+            <li>folder: <a href="/folder/<%= folder.id %>"><%= folder.name %></a></li>
+          <% }) %>
+        <% } %>
+        <% if (locals.files) { %>
+          <% locals.files.forEach((file) => { %>
+            <li>file: <a href="/file/<%= file.id %>"><%= file.name %></a></li>
+          <% }) %>
+        <% } %>
+      </ul>
+    </main>
     <% if (locals.folderId) { %>
+      <form action="/folder/<%= locals.folderId %>" method="POST" class="hidden">
+        <label for="folderName">Folder Name</label>
+        <input type="text" name="folderName" id="folderName" required>
+        <button>Submit</button>
+      </form>
       <form action="/upload/<%= locals.folderId %>" method="POST" enctype="multipart/form-data" class="hidden">
         <label for="upload">Upload File</label>
         <input type="file" name="upload" id="upload" required>
